@@ -22,7 +22,7 @@ namespace SMTP_Mail_Server_Tester
 
         private void btnStartTest_Click(object sender, EventArgs e)
         {
-
+            lblStatus.Text = "";
             if (txtHost.Text.Length < 5)
             {
                 MessageBox.Show("Host not specified", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -48,11 +48,11 @@ namespace SMTP_Mail_Server_Tester
                 }
                 else
                     client.UseDefaultCredentials = true;
-
+                    client.EnableSsl = chkBokSSL.Checked;
                 MailMessage mailMessage = new MailMessage();
 
-                mailMessage.From = new MailAddress("test@gmail.com");
-                mailMessage.To.Add("test@gmail.com");
+                mailMessage.From = new MailAddress(txtFrom.Text);
+                mailMessage.To.Add(txtTo.Text);
                 mailMessage.Subject = "This is a test";
                 mailMessage.Body = "This is the bofy. Just a test";
                 client.Send(mailMessage);
@@ -62,9 +62,19 @@ namespace SMTP_Mail_Server_Tester
             catch (Exception ex2)
             {
                 ex = ex2;
-                lblStatus.Text = "Error Message: " + ex.Message + " || Erro Stack Trace: " + ex.StackTrace;
+                lblStatus.Text = "Error Message: " + ex.Message  ;
             }
 
+        }
+
+        private void chkBokSSL_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBokSSL.Checked == true)
+            {
+                txtPort.Text = "587";
+                } else {
+                txtPort.Text = "25";
+            }
         }
     }
 }

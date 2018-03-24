@@ -38,12 +38,23 @@
             this.txtHost = new System.Windows.Forms.TextBox();
             this.lblHostName = new System.Windows.Forms.Label();
             this.btnStartTest = new System.Windows.Forms.Button();
+            this.txtFrom = new System.Windows.Forms.TextBox();
+            this.lblFrom = new System.Windows.Forms.Label();
+            this.txtTo = new System.Windows.Forms.TextBox();
+            this.lblTo = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.chkBokSSL = new System.Windows.Forms.CheckBox();
             this.gb01.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb01
             // 
+            this.gb01.Controls.Add(this.chkBokSSL);
+            this.gb01.Controls.Add(this.lblStatus);
+            this.gb01.Controls.Add(this.txtTo);
+            this.gb01.Controls.Add(this.lblTo);
+            this.gb01.Controls.Add(this.txtFrom);
+            this.gb01.Controls.Add(this.lblFrom);
             this.gb01.Controls.Add(this.txtPassword);
             this.gb01.Controls.Add(this.lblPassword);
             this.gb01.Controls.Add(this.txtUsername);
@@ -54,7 +65,7 @@
             this.gb01.Controls.Add(this.lblHostName);
             this.gb01.Location = new System.Drawing.Point(12, 12);
             this.gb01.Name = "gb01";
-            this.gb01.Size = new System.Drawing.Size(529, 85);
+            this.gb01.Size = new System.Drawing.Size(533, 209);
             this.gb01.TabIndex = 12;
             this.gb01.TabStop = false;
             this.gb01.Text = "SMTP Parameters";
@@ -63,7 +74,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(331, 46);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(182, 20);
+            this.txtPassword.Size = new System.Drawing.Size(193, 20);
             this.txtPassword.TabIndex = 4;
             // 
             // lblPassword
@@ -126,7 +137,7 @@
             // 
             // btnStartTest
             // 
-            this.btnStartTest.Location = new System.Drawing.Point(466, 118);
+            this.btnStartTest.Location = new System.Drawing.Point(470, 227);
             this.btnStartTest.Name = "btnStartTest";
             this.btnStartTest.Size = new System.Drawing.Size(75, 23);
             this.btnStartTest.TabIndex = 13;
@@ -134,21 +145,62 @@
             this.btnStartTest.UseVisualStyleBackColor = true;
             this.btnStartTest.Click += new System.EventHandler(this.btnStartTest_Click);
             // 
+            // txtFrom
+            // 
+            this.txtFrom.Location = new System.Drawing.Point(68, 79);
+            this.txtFrom.Name = "txtFrom";
+            this.txtFrom.Size = new System.Drawing.Size(193, 20);
+            this.txtFrom.TabIndex = 7;
+            // 
+            // lblFrom
+            // 
+            this.lblFrom.AutoSize = true;
+            this.lblFrom.Location = new System.Drawing.Point(4, 86);
+            this.lblFrom.Name = "lblFrom";
+            this.lblFrom.Size = new System.Drawing.Size(33, 13);
+            this.lblFrom.TabIndex = 8;
+            this.lblFrom.Text = "From:";
+            // 
+            // txtTo
+            // 
+            this.txtTo.Location = new System.Drawing.Point(331, 79);
+            this.txtTo.Name = "txtTo";
+            this.txtTo.Size = new System.Drawing.Size(193, 20);
+            this.txtTo.TabIndex = 9;
+            // 
+            // lblTo
+            // 
+            this.lblTo.AutoSize = true;
+            this.lblTo.Location = new System.Drawing.Point(267, 86);
+            this.lblTo.Name = "lblTo";
+            this.lblTo.Size = new System.Drawing.Size(23, 13);
+            this.lblTo.TabIndex = 10;
+            this.lblTo.Text = "To:";
+            // 
             // lblStatus
             // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(21, 127);
+            this.lblStatus.Location = new System.Drawing.Point(6, 111);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(46, 13);
-            this.lblStatus.TabIndex = 14;
+            this.lblStatus.Size = new System.Drawing.Size(518, 85);
+            this.lblStatus.TabIndex = 15;
             this.lblStatus.Text = "Status...";
+            // 
+            // chkBokSSL
+            // 
+            this.chkBokSSL.AutoSize = true;
+            this.chkBokSSL.Location = new System.Drawing.Point(384, 19);
+            this.chkBokSSL.Name = "chkBokSSL";
+            this.chkBokSSL.Size = new System.Drawing.Size(71, 17);
+            this.chkBokSSL.TabIndex = 16;
+            this.chkBokSSL.Text = "SSL/TLS";
+            this.chkBokSSL.UseVisualStyleBackColor = true;
+            this.chkBokSSL.CheckedChanged += new System.EventHandler(this.chkBokSSL_CheckedChanged);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 153);
-            this.Controls.Add(this.lblStatus);
+            this.ClientSize = new System.Drawing.Size(557, 262);
             this.Controls.Add(this.btnStartTest);
             this.Controls.Add(this.gb01);
             this.Name = "frmMain";
@@ -156,7 +208,6 @@
             this.gb01.ResumeLayout(false);
             this.gb01.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -173,6 +224,11 @@
         private System.Windows.Forms.Label lblHostName;
         private System.Windows.Forms.Button btnStartTest;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.TextBox txtTo;
+        private System.Windows.Forms.Label lblTo;
+        private System.Windows.Forms.TextBox txtFrom;
+        private System.Windows.Forms.Label lblFrom;
+        private System.Windows.Forms.CheckBox chkBokSSL;
     }
 }
 
